@@ -1,4 +1,4 @@
-# Signal-Course
+# Author Profile
 
 ![uye](https://github.com/haninsyamsi036/Signal-Course/assets/144574915/3ec707de-16df-4deb-b668-052ddadfb237)
 
