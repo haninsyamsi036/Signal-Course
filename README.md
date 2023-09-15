@@ -1,6 +1,7 @@
 # Author Profile
+<P align="center">
+        <img src="https://github.com/haninsyamsi036/Signal-Course/assets/144574915/3ec707de-16df-4deb-b668-052ddadfb237" style="width:400px;" />
 
-![uye](https://github.com/haninsyamsi036/Signal-Course/assets/144574915/3ec707de-16df-4deb-b668-052ddadfb237)
 
 <table border="1" cellpadding="10" align=center>
         <tr>
