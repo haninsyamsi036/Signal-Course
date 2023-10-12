@@ -1,36 +1,34 @@
-# Signal Project 1
+# Signal Project 3
 
-## Section A: IPython Console from Spyder showing Name and NRP
-      print ("Name: Hanin Ainussyamsi Prabowo")
-      print ("NRP: 5009211036")
-![Bagian-A](https://github.com/haninsyamsi036/Signal-Course/assets/144574915/7e3c4f69-3363-4eb3-85aa-c58df792d8d6)
+## Naive Implementation of Convolution
+   ### Original Phyton Script 
+    def convolve(Signal_1, Signal_2):
+    #Hitung panjang sinyal yang dihasilkan
+    length = len(Signal_1) + len(Signal_2) - 1
+    # Inisialisasi sinyal yang dihasilkan dengan nol
+    result = [0] * length
+ 
+    #Lakukan operasi konvolusi
+    for i in range(length):
+        for j in range(len(Signal_1)):
+            if i - j >= 0 and i - j < len(Signal_2):
+                result[i] += Signal_1[j] * Signal_2[i - j]
+    return result
 
-## Section B: Savitzky-Golay Filter
-      # -*- coding: utf-8 -*-
-      """
-      Created on Thu Sep 14 09:53:14 2023
+    print ("Naive Impelementation of Convolution")
+    print ("Hanin Ainussyamsi Prabowo")
+    print ("5009211036")
+
+    #Uji fungsi di atas dengan menggunakan dua sinyal
+    Signal_1 = [1, 3, 5, 7]
+    Signal_2 = [2, 4, 6, 8]
+    result = convolve(Signal_1, Signal_2)
+    print(result)
       
-      @author: user
-      """
+### Result      
+![NaiveImplementation-Convolution](https://github.com/haninsyamsi036/Signal-Course/assets/144574915/a29529d5-8983-4aae-a799-f18ebe5de8d8)
 
-      import matplotlib.pyplot as plt
-      import numpy as np
-      mu, sigma = 0, 500
-      x = np.arange(1, 100, 0.1)  # x axis
-      z = np.random.normal(mu, sigma, len(x))  # noise
-      y = x ** 2 + z # data
-      #plt.plot(x, y, linewidth=2, linestyle="-", c="b")  # it include some noise
+### Description
+Pada kode ini, fungsi `convolve` mengambil dua sinyal larik 1 dimensi sebagai masukan. Fungsi ini menghitung panjang sinyal yang dihasilkan dan menginisialisasinya dengan angka nol. Kemudian, fungsi ini melakukan operasi konvolusi dengan mengulangi elemen-elemen sinyal input dan mengalikannya bersama-sama. Hasil dari setiap perkalian ditambahkan ke posisi yang sesuai dalam sinyal yang dihasilkan. Terakhir, fungsi mengembalikan sinyal yang dihasilkan. Dalam kasus ini menggunakan dua sinyal dengan nilai integer. Sinyal yang dihasilkan dihitung dengan mengalikan dua sinyal input. Keluaran dari kode adalah sinyal yang dihasilkan.
 
-      from scipy.signal import savgol_filter
-      w = savgol_filter(y, 101, 2)
-      #plt.plot(x, w, 'b')  # high frequency noise removed
-
-      #plot all
-      fig, ax = plt.subplots(1,2)
-      ax[0].plot(x, y, linewidth=2, linestyle="-", c="b")
-      ax[1].plot(x, w, 'b')
-![Bagian-B](https://github.com/haninsyamsi036/Signal-Course/assets/144574915/d4a0d593-53f0-4cbc-91f1-b73bcd2f318c)
-
-
-## Section C: Last Commit Logs
-![Bagian-C](https://github.com/haninsyamsi036/Signal-Course/assets/144574915/d0c1f0ac-39f3-485f-a554-57f02bfe410f)
+Untuk memvalidasi hasilnya, saya menggunakan NumPy Convolve. Keluaran dari NumPy Convolve harus sama dengan keluaran dari fungsi `convolve`. Jika tidak sama, hal ini mengindikasikan adanya kesalahan dalam implementasi. Jika sinyal input tidak memiliki tipe yang sesuai, kode akan gagal.
